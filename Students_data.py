@@ -1,65 +1,5 @@
 
-'''
-# Students data list : ( Fetching student details after creating a dictionary ) 
-students_data = [['Abu Talib', '44', '59', '98', '45', '85', '36'], ['Ahmad', '72', '55', '33', '77', '42', '47'], ['Akbar', '84', '39', '38', '47', '66', '82'], ['Ali', '88', '67', '58', '96', '99', '37'], ['Asghar', '75', '73', '47', '62', '34', '58'], ['Ashraf', '99', '55', '68', '69', '37', '72'], ['Bashir', '53', '59', '70', '45', '87', '59'], ['Bilal', '82', '67', '73', '75', '50', '57'], ['Faheem', '83', '67', '36', '92', '57', '74'], ['Farooq', '36', '44', '86', '76', '64', '54'], ['Haider', '86', '52', '87', '60', '54', '94'], ['Hammad', '96', '74', '73', '55', '59', '50'], ['Hamza', '47', '34', '69', '41', '83', '86'], ['Idrees', '47', '44', '93', '98', '52', '98'], ['Iftikhar', '80', '57', '97', '66', '82', '87'], ['Ikram', '48', '81', '41', '78', '48', '39'], ['Imran', '46', '77', '55', '93', '85', '97'], ['Ishfaq', '87', '35', '40', '44', '55', '68'], ['Jawad', '82', '50', '82', '42', '72', '55'], ['Kashaan', '82', '96', '50', '79', '63', '84'], ['Maqbool', '68', '69', '39', '76', '82', '84'], ['Mudassir', '62', '37', '87', '75', '36', '37'], ['Muneeb', '53', '82', '37', '94', '99', '93'], ['Mushtaq', '88', '59', '64', '78', '73', '52'], ['Naveed', '33', '45', '54', '52', '83', '51'], ['Nazir', '51', '50', '89', '64', '38', '54'], ['Qaiser', '85', '95', '37', '40', '61', '75'], ['Qasim', '90', '54', '94', '70', '78', '84'], ['Qayoom', '85', '93', '37', '76', '87', '39'], ['Rashid', '84', '36', '52', '69', '58', '80'], ['Riaz', '92', '54', '63', '45', '59', '45'], ['Roman', '74', '64', '76', '93', '93', '40'], ['Safwaan', '90', '54', '58', '94', '71', '79'], ['Salman', '58', '47', '91', '37', '35', '75'], ['Sameer', '42', '72', '67', '61', '95', '42'], ['Saqlain', '83', '89', '37', '75', '66', '95'], ['Shabir', '82', '74', '86', '57', '95', '42'], ['Shfique', '55', '96', '75', '44', '92', '76'], ['Siddique', '58', '49', '41', '35', '93', '68'], ['Sufyan', '59', '81', '40', '89', '35', '72'], ['Tanveer', '80', '97', '46', '83', '71', '56'], ['Ubaidullah', '67', '45', '82', '83', '63', '43'], ['Umar', '56', '66', '92', '93', '37', '44'], ['Usman', '44', '51', '57', '48', '83', '72'], ['Waseem', '58', '64', '43', '83', '52', '79'], ['Zaeem', '90', '95', '91', '42', '44', '35'], ['Zahid', '71', '33', '75', '46', '43', '99'], ['Zeshaan', '61', '92', '58', '89', '71', '70']]
-
-# Calculate [ TOTAL MARKS, PERCENTAGE, STATE(Pass/Fail), GRADES(90>=A, 80>=B, 70>=C, 60>=D, 60<F), FINE(60<$10,40<$30) ]
-class Student_Class :
-    def __init__(self,student_details):
-        details["name"] = student_details[0]
-        marks = student_details[1:]
-        details["marks"] = student_details[1:]
-        sum = 0
-        for val in marks:
-            sum += int(val)
-        # Subjects : English,Math,Computer,Physics,Chemistry,Statistics
-        details["english"] = int(student_details[1])
-        details["math"] = int(student_details[2])
-        details["computer"] = int(student_details[3])
-        details["physics"] = int(student_details[4])
-        details["chemistry"] = int(student_details[5])
-        details["statistics"] = int(student_details[6])
-        percentage = (sum*100/600)
-        details["percentage"] = percentage
-        if(percentage>=90):
-            details["grade"] = "A"
-            details["status"] = "Pass"
-        elif(percentage>=80):
-            details["grade"] = "B"
-            details["status"] = "pass"
-        elif(percentage>=70):
-            details["grade"] = "C"
-            details["status"] = "pass"
-        elif(percentage>=60):
-            details["grade"] = "D"
-            details["status"] = "pass"
-        else:
-            details["grade"] = "F"
-            details["status"] = "Fail"
-            if(percentage<40):
-                details["fine"] = "30 Dollars"
-            else:
-                details["fine"] = "10 Dollars"
-                
-                
-# ------ Student details from Database on the base of input -----
-details = {}    # an empty dictionary to add details later
-roll_no = int(input("Enter the roll_no of Student : "))
-student_details = students_data[roll_no-1]
-student =  Student_Class(student_details)
-choice = True
-while(choice != 'E'):
-    print("Enter =>  name, marks, english, math, computer, physics, chemistry, statistics, status, percentage, grade, fine")
-    value = input("what to check ? : ")     # checking input from user
-    if(value=="name" or value=="marks" or value=="english" or value=="math" or value=="computer" or value=="physics" or value=="chemistry" or value=="statistics" or value=="status" or value=="percentage" or value=="grade" or value=="fine"):
-        print(details[value])   # giving the output 
-    else:
-        print("Invalid input, Try later... ")   # Error message, in case invalid input
-    choice = input("Enter any character to continue, Enter 'E' to Exit : ")
-'''
-#--------------------------------------------------------------------------------
-'''
-# Students data list : ( Student database using class methods ) 
+# Students data list : ( Student database as Nested List ) 
 students_data = [['Abu Talib', '44', '59', '98', '45', '85', '36'], ['Ahmad', '72', '55', '33', '77', '42', '47'], ['Akbar', '84', '39', '38', '47', '66', '82'], ['Ali', '88', '67', '58', '96', '99', '37'], ['Asghar', '75', '73', '47', '62', '34', '58'], ['Ashraf', '99', '55', '68', '69', '37', '72'], ['Bashir', '53', '59', '70', '45', '87', '59'], ['Bilal', '82', '67', '73', '75', '50', '57'], ['Faheem', '83', '67', '36', '92', '57', '74'], ['Farooq', '36', '44', '86', '76', '64', '54'], ['Haider', '86', '52', '87', '60', '54', '94'], ['Hammad', '96', '74', '73', '55', '59', '50'], ['Hamza', '47', '34', '69', '41', '83', '86'], ['Idrees', '47', '44', '93', '98', '52', '98'], ['Iftikhar', '80', '57', '97', '66', '82', '87'], ['Ikram', '48', '81', '41', '78', '48', '39'], ['Imran', '46', '77', '55', '93', '85', '97'], ['Ishfaq', '87', '35', '40', '44', '55', '68'], ['Jawad', '82', '50', '82', '42', '72', '55'], ['Kashaan', '82', '96', '50', '79', '63', '84'], ['Maqbool', '68', '69', '39', '76', '82', '84'], ['Mudassir', '62', '37', '87', '75', '36', '37'], ['Muneeb', '53', '82', '37', '94', '99', '93'], ['Mushtaq', '88', '59', '64', '78', '73', '52'], ['Naveed', '33', '45', '54', '52', '83', '51'], ['Nazir', '51', '50', '89', '64', '38', '54'], ['Qaiser', '85', '95', '37', '40', '61', '75'], ['Qasim', '90', '54', '94', '70', '78', '84'], ['Qayoom', '85', '93', '37', '76', '87', '39'], ['Rashid', '84', '36', '52', '69', '58', '80'], ['Riaz', '92', '54', '63', '45', '59', '45'], ['Roman', '74', '64', '76', '93', '93', '40'], ['Safwaan', '90', '54', '58', '94', '71', '79'], ['Salman', '58', '47', '91', '37', '35', '75'], ['Sameer', '42', '72', '67', '61', '95', '42'], ['Saqlain', '83', '89', '37', '75', '66', '95'], ['Shabir', '82', '74', '86', '57', '95', '42'], ['Shfique', '55', '96', '75', '44', '92', '76'], ['Siddique', '58', '49', '41', '35', '93', '68'], ['Sufyan', '59', '81', '40', '89', '35', '72'], ['Tanveer', '80', '97', '46', '83', '71', '56'], ['Ubaidullah', '67', '45', '82', '83', '63', '43'], ['Umar', '56', '66', '92', '93', '37', '44'], ['Usman', '44', '51', '57', '48', '83', '72'], ['Waseem', '58', '64', '43', '83', '52', '79'], ['Zaeem', '90', '95', '91', '42', '44', '35'], ['Zahid', '71', '33', '75', '46', '43', '99'], ['Zeshaan', '61', '92', '58', '89', '71', '70']]
 
 # Calculate [ TOTAL MARKS, PERCENTAGE, STATE(Pass/Fail), GRADES(90>=A, 80>=B, 70>=C, 60>=D, 60<F), FINE(60<$10,40<$30) ]
@@ -126,7 +66,6 @@ class StudentClass :
         else : 
             return None     # method returns fine
 
-            
 # ------ Student details from Database on the base of input -----
 roll_no = int(input("Enter the roll_no of Student : "))     # inputing roll-no 
 student_details = students_data[roll_no-1]    # Calculating the index from roll-no
@@ -201,5 +140,5 @@ if(choice2 == "yes"):
         print("Student Data not matched, Try again later...")
     choice2 = input("Want to remove more Students from Database | yes or no : ")
 
-'''
+
 
